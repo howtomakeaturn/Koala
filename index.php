@@ -19,6 +19,10 @@
 
     require SYS_PATH . 'Template.php';
 
+    require SYS_PATH . 'rb.php';
+    R::setup('mysql:host=localhost;dbname=koala',
+        'koala','koala');    
+
     // Autoload user's class
     function __autoload($class){
         include_once( APP_PATH . 'controllers/'. $class . '.php' );

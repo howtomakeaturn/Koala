@@ -20,9 +20,13 @@
     R::setup('mysql:host=localhost;dbname=koala',
         'koala','koala');    
 
-    // Autoload user's class
+    /* Autoload user's class.
+     * Including controllers.
+     */
     function __autoload($class){
-        include_once( APP_PATH . 'controllers/'. $class . '.php' );
+        if (file_exists( APP_PATH . 'controllers/'. $class . '.php' )){
+            include_once( APP_PATH . 'controllers/'. $class . '.php' );
+        }
     }
     
     require APP_PATH . 'route.php';

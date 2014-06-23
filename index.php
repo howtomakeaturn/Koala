@@ -14,7 +14,7 @@
 
     require SYS_PATH . 'Template.php';
     // Configure the Template class
-    Template::configure( array( 'template_path' => APP_PATH . '/templates/' ) );
+    Template::configure( array( 'template_path' => APP_PATH . '/views/' ) );
 
     require SYS_PATH . 'rb.php';
     require APP_PATH . 'config.php';

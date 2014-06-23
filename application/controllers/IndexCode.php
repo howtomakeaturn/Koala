@@ -1,6 +1,9 @@
 <?php
     class IndexCode {
         function get() {
-          echo Template::make('code_index');
+
+          $posts = R::findAll('post');
+
+          echo Template::make('code_index', array('posts' => $posts));
         }
     }

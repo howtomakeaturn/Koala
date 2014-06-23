@@ -8,4 +8,14 @@
 
             echo Template::make('add_code');
         }
+
+        function post() {
+            $post = R::dispense('post');
+            $post->text = $_POST['content'];
+            $id = R::store($post);       //Create or Update
+
+            header('Location: ' . '/code');
+        }
+        
+        
     }

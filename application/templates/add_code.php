@@ -1,3 +1,5 @@
 <h1>Add Code</h1>
-<input type='text' />
-<button>SUBMIT</button>
+<form action='/code/add' method='post'>
+    <textarea rows=20 name='content'></textarea>
+    <input type='submit' value='submit' />
+</form>

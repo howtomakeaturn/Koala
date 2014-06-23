@@ -17,8 +17,9 @@
     Template::configure( array( 'template_path' => APP_PATH . '/templates/' ) );
 
     require SYS_PATH . 'rb.php';
-    R::setup('mysql:host=localhost;dbname=koala',
-        'koala','koala');    
+    require APP_PATH . 'config.php';
+
+    R::setup($configs['dns'], $configs['db_user'], $configs['db_password']);    
 
     /* Autoload user's class.
      * Including controllers.

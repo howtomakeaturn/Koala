@@ -26,3 +26,5 @@
     }
     
     require APP_PATH . 'route.php';
+
+    Toro::serve($routes);

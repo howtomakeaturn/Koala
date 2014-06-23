@@ -33,3 +33,5 @@
     require APP_PATH . 'route.php';
 
     Toro::serve($routes);
+    // End of the file.
+    // That's all. The Toro router will handle all the things!

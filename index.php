@@ -28,6 +28,9 @@
         if (file_exists( APP_PATH . 'controllers/'. $class . '.php' )){
             include_once( APP_PATH . 'controllers/'. $class . '.php' );
         }
+        if (file_exists( BASE_PATH . 'library/'. $class . '.php' )){
+            include_once( BASE_PATH . 'library/'. $class . '.php' );
+        }
     }
     
     require APP_PATH . 'route.php';

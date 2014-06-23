@@ -9,15 +9,12 @@
     define('APP_PATH', realpath('application').'/');
     define('SYS_PATH', realpath('system').'/');
     define('BASE_PATH', realpath('').'/');
-    define('TEMPLATE_PATH', APP_PATH . '/templates/');
-
-    // We don't wanna key in the string '.php' everytime
-    define('EXT', '.php');
-
 
     require SYS_PATH . 'Toro.php';
 
     require SYS_PATH . 'Template.php';
+    // Configure the Template class
+    Template::configure( array( 'template_path' => APP_PATH . '/templates/' ) );
 
     require SYS_PATH . 'rb.php';
     R::setup('mysql:host=localhost;dbname=koala',

@@ -1,3 +1,10 @@
-I hate interdependency so much.
+# Koala Framework
+One koala wants to build his own framework.
 
-I wanna create a framework with no interdependency.
+He's very lazy so he takes all the components from everywhere.
+
+He thinks real OOP means no interdependency.
+
+## Features
+* Zero interdependency
+* Elegant structure

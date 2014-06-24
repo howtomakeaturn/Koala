@@ -5,6 +5,8 @@ He's very lazy so he takes all the components from everywhere.
 
 He thinks real OOP means no interdependency.
 
+He's too lazy to instantiate stuff and then use it. He want to use function immediately. He like static method.
+
 ## Features
 * Zero interdependency
 * Elegant structure

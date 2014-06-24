@@ -10,7 +10,8 @@
     define('SYS_PATH', realpath('system').'/');
     define('BASE_PATH', realpath('').'/');
 
-    require SYS_PATH . 'Toro.php';
+    #require SYS_PATH . 'Toro.php';
+    require SYS_PATH . 'Router.php';
 
     require SYS_PATH . 'Template.php';
     // Configure the Template class
@@ -35,6 +36,7 @@
     
     require APP_PATH . 'route.php';
 
-    Toro::serve($routes);
+    Router::serve($routes);
+    #Toro::serve($routes);
     // End of the file.
     // That's all. The Toro router will handle all the things!

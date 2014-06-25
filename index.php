@@ -32,6 +32,13 @@
         if (file_exists( BASE_PATH . 'library/'. $class . '.php' )){
             include_once( BASE_PATH . 'library/'. $class . '.php' );
         }
+        global $configs;
+        foreach($configs['autoload_path'] as $path){
+            if (file_exists( APP_PATH . "$path/". $class . '.php' )){
+                include_once( APP_PATH . "$path/". $class . '.php' );
+            }          
+        }
+        
     }
     
     require APP_PATH . 'route.php';

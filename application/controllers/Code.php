@@ -2,8 +2,8 @@
 class Code {
     
     function getIndex() {
-      $posts = R::findAll('post');
-      echo Template::make('code_index', array('posts' => $posts));
+        $posts = CodeRepository::getAll();
+        echo Template::make('code_index', array('posts' => $posts));
     }
     
     function getAdd() {
@@ -13,9 +13,10 @@ class Code {
     }        
     
     function postAdd(){
-        $post = R::dispense('post');
-        $post->text = $_POST['content'];
-        $id = R::store($post);       //Create or Update
+        $article = new ArticleEntity();
+        $article->setContent($_POST['content']);
+        $article->save();      
+
         header('Location: ' . '/code');
     }
     

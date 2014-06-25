@@ -13,4 +13,15 @@ class ArticleEntity{
         $id = R::store($post);       //Create or Update      
     }
   
+    static function get($id){
+        $post = R::load('post', $id);      
+        return $post;
+    }
+
+    static function delete($id){
+        $post = R::load('post', $id);      
+        R::trash($post);
+        return TRUE;
+    }
+  
 }

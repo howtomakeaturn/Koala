@@ -21,9 +21,14 @@ class Code {
     }
     
     function getView($id){
-        $post = R::load('post', $id);
+        $post = ArticleEntity::get($id);
         $typo_lib = new Typography();
         echo Template::make('view_code', array('post'=>$post, 'typo_lib'=>$typo_lib));
+    }
+
+    function getDelete($id){
+        ArticleEntity::delete($id);
+        header('Location: ' . '/code');
     }
     
 }

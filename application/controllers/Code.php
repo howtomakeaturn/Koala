@@ -27,7 +27,9 @@ class Code {
     }
 
     function getDelete($id){
-        ArticleEntity::delete($id);
+        $post = ArticleEntity::get($id);
+        $post->delete();
+
         header('Location: ' . '/code');
     }
     

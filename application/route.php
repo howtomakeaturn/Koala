@@ -1,4 +1,5 @@
 <?php
     $routes = array(
-        "/code" => "Code"
+        "/code" => "Code",
+        '/blog'   => "BlogController"
     );

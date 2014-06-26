@@ -18,10 +18,13 @@ class ArticleEntity{
         return $post;
     }
 
-    static function delete($id){
-        $post = R::load('post', $id);      
+    function delete(){
+        $post = R::load('post', $this->id);
+        exit($this);
         R::trash($post);
         return TRUE;
     }
-  
+    // Now you wish you extend the ORM again...
+    // which you think is pretty bad yesterday ...
+    // The 'Entity' ...
 }

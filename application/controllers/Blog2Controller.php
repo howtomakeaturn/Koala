@@ -1,8 +1,8 @@
 <?php
-class BlogController {
+class Blog2Controller {
     
     function getIndex() {
-        $articles = BlogModel::getAll();
+
         echo Template::make('blog/code_index', array('articles' => $articles));
     }
     
@@ -15,25 +15,28 @@ class BlogController {
             'title'=>$_POST['title'], 
             'text'=>$_POST['content']
         );
-        
-        $id = BlogModel::create($data);
+        $blog = new Blog2Model();
+        $blog->title = $_POST['title'];
+        $blog->text = $_POST['content'];
+        $blog->save();
+
         header('Location: ' . '/blog/view/' . $id);
     }
     
     function getView($id){
-        $article = BlogModel::get($id);
+
         $typo_lib = new Typography();
         echo Template::make('blog/view_code', array('article'=>$article, 'typo_lib'=>$typo_lib));
     }
 
     function getEdit($id){
-        $article = BlogModel::get($id);
+
         $typo_lib = new Typography();
         echo Template::make('edit_article', array('article'=>$article, 'typo_lib'=>$typo_lib));
     }
 
     function getDelete($id){
-        BlogModel::delete($id);        
+
         header('Location: ' . '/blog');
     }
 

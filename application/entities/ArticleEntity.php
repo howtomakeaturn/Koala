@@ -2,6 +2,8 @@
 
 class ArticleEntity{
     public $content;
+    public $text;
+    public $pm; // persistent model. which is usually the ORM instance.
     
     function setContent($content){
         $this->content = $content;
@@ -15,12 +17,16 @@ class ArticleEntity{
   
     static function get($id){
         $post = R::load('post', $id);      
-        return $post;
+        $article = new self();
+        $article->pm = $post;
+        $article->id = $article->pm->id;
+        $article->title = $article->pm->title;
+        $article->text = $article->pm->text;
+        return $article;
     }
 
     function delete(){
-        $post = R::load('post', $this->id);
-        exit($this);
+        $post = R::load('post', $this->pm->id);
         R::trash($post);
         return TRUE;
     }
